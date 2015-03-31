@@ -28,13 +28,13 @@ public class Main {
         int required = Integer.parseInt(reader.readLine());
 
         /**
-         * 
+         *
          * Метод для заполнения массива
          */
         buildArray(lines, columns);
-        
+
         /**
-         * 
+         *
          * Метод поиска индекса заданного значения на совпадение в массиве
          */
         searchNumberInArray(workingArray, required, lines, columns);
@@ -50,11 +50,18 @@ public class Main {
                 k++;
             }
         }
+
+        for (int i = 0; i < m; i++) {
+            for (int j = 0; j < n; j++) {
+                System.out.print(workingArray[i][j] + "\t");
+            }
+            System.out.println();
+        }
     }
 
     private static void searchNumberInArray(int[][] workingArray, int required, int lines, int columns) {
 
-        if (workingArray[0][0] < required) {
+        if (workingArray[0][0] > required) {
             System.out.println("Искомого значения в массиве нет!");
         } else if (workingArray[0][0] == required) {
             System.out.println("Индекс искомого значения: [0][0]");
@@ -63,6 +70,7 @@ public class Main {
                 for (int i = 0; i < columns; i++) {
                     if (workingArray[0][i] == required) {
                         System.out.println("Индекс искомого значения: [0][" + i + "]");
+                        break;
                     }
                 }
             } else {
@@ -71,6 +79,7 @@ public class Main {
                         for (int k = 0; k < lines; k++) {
                             if (workingArray[i][k] == required) {
                                 System.out.println("Индекс искомого значения: [" + i + "][" + k + "]");
+                                break;
                             }
                         }
                     } else if (workingArray[i][columns - 1] == required) {
