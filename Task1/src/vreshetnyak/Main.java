@@ -50,13 +50,6 @@ public class Main {
                 k++;
             }
         }
-
-        for (int i = 0; i < m; i++) {
-            for (int j = 0; j < n; j++) {
-                System.out.print(workingArray[i][j] + "\t");
-            }
-            System.out.println();
-        }
     }
 
     private static void searchNumberInArray(int[][] workingArray, int required, int lines, int columns) {
