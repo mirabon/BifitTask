@@ -54,7 +54,7 @@ public class Main {
 
     private static void searchNumberInArray(int[][] workingArray, int required, int lines, int columns) {
 
-        if (workingArray[0][0] > required) {
+        if (workingArray[0][0] > required | workingArray[lines - 1][columns - 1] < required) {
             System.out.println("Искомого значения в массиве нет!");
         } else if (workingArray[0][0] == required) {
             System.out.println("Индекс искомого значения: [0][0]");
